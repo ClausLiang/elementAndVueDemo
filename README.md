@@ -3,6 +3,7 @@
 > vue and elementUI
 
 vue init webpack elementAndVueDemo 创建了项目
+
 该项目js框架为vue，ui框架为element
 
 ## Build Setup
