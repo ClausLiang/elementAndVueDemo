@@ -2,9 +2,13 @@
 
 > vue and elementUI
 该项目js框架为vue，ui框架为element
+
 1.vue init webpack elementAndVueDemo 创建了项目
+
 2.①git init ②git add . ③git commit -m "xxx" 完成git本地提交
+
 3.GitHub客户端add项目，publish完成推送远端。
+
 
 
 ## Build Setup
