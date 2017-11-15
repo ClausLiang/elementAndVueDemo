@@ -9,6 +9,7 @@
 </template>
 <script>
 import axios from 'axios'
+// 定义了一个局部组件
 var child = {
   props: ['message'],
   template: '<div>{{message}}</div>'
