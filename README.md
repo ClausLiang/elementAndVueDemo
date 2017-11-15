@@ -9,6 +9,9 @@
 
 3.GitHub客户端add项目，publish完成推送远端。
 
+4.npm install element-ui -D
+
+5.npm install stylus stylus-loader -D
 
 
 ## Build Setup
