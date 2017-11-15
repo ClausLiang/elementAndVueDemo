@@ -5,7 +5,7 @@
       <el-container>
         <el-aside width="200px" class="menu">
           <el-menu
-            default-active="/fatherToSon"
+            :default-active="currentMenu"
             class="el-menu-vertical-demo" router>
             <el-menu-item index="/fatherToSon">
               <i class="el-icon-menu"></i>
@@ -26,6 +26,14 @@
 </template>
 <script>
   export default {
+    data () {
+      return {
+        currentMenu: '/'
+      }
+    },
+    created () {
+      this.currentMenu = this.$route.path
+    }
   }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
