@@ -15,6 +15,10 @@
               <i class="el-icon-menu"></i>
               <span slot="title">子组件对父组件传值</span>
             </el-menu-item>
+            <el-menu-item index="/websocket">
+              <i class="el-icon-menu"></i>
+              <span slot="title">websocket</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">
@@ -28,11 +32,8 @@
   export default {
     data () {
       return {
-        currentMenu: '/'
+        currentMenu: this.$route.path
       }
-    },
-    created () {
-      this.currentMenu = this.$route.path
     }
   }
 </script>
