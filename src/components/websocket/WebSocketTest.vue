@@ -6,30 +6,39 @@
 <script>
   export default {
     data () {
-      return {}
+      return {
+        socket: null
+      }
     },
     created () {
       this.websocket()
     },
+    beforeDestroy () {
+      this.socket.close()
+    },
     methods: {
       websocket () {
         /**
-         * 四个方法：打开，发送，接收，出错
+         * 5个方法：打开，发送，接收，出错，关闭
          * @type {WebSocket}
          */
-        var socket = new WebSocket('ws://10.10.27.51/notice/user/HYS010387/message')
+        this.socket = new WebSocket('ws://10.10.27.51/notice/606/hjmxufrv/websocket') // user/HYS010387/message // 606/hjmxufrv/websocket
         // 打开
-        socket.onopen = function (event) {
+        this.socket.onopen = function (event) {
           // 发送
           // socket.send('xxx')
-          // 接收
-          socket.onmessage = function (event) {
-            console.log('received:', event)
-          }
+        }
+        // 接收
+        this.socket.onmessage = function (event) {
+          console.log('received:', event)
         }
         // 出错
-        socket.onerror = function (event) {
+        this.socket.onerror = function (event) {
           console.log(event.data)
+        }
+        // 关闭
+        this.socket.onclose = function (event) {
+          console.log('websocket连接关闭')
         }
       }
     }
