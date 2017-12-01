@@ -4,6 +4,8 @@ import Index from '@/components/Index'
 import FatherToSon from '@/components/fatherToSon/FatherToSon'
 import SonToFather from '@/components/sonToFather/SonToFather'
 import WebSocketTest from '@/components/websocket/WebSocketTest'
+import AddGoods from '@/components/vuexContainer/AddGoods'
+import ShowGoods from '@/components/vuexContainer/ShowGoods'
 
 Vue.use(Router)
 
@@ -25,6 +27,14 @@ export default new Router({
         {
           path: '/websocket',
           component: WebSocketTest
+        },
+        {
+          path: '/addgoods',
+          component: AddGoods
+        },
+        {
+          path: '/showGoods',
+          component: ShowGoods
         }
       ]
     }

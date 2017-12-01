@@ -1,4 +1,4 @@
-# vue
+# vue，element-ui，vuex
 
 > vue and elementUI
 该项目js框架为vue，ui框架为element
@@ -12,6 +12,8 @@
 4.npm install element-ui -D
 
 5.npm install stylus stylus-loader -D
+
+6.npm install vuex -D
 
 
 ## Build Setup

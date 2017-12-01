@@ -19,6 +19,14 @@
               <i class="el-icon-menu"></i>
               <span slot="title">websocket</span>
             </el-menu-item>
+            <el-menu-item index="/addgoods">
+              <i class="el-icon-edit-outline"></i>
+              <span slot="title">vuex存数据到store</span>
+            </el-menu-item>
+            <el-menu-item index="/showgoods">
+              <i class="el-icon-goods"></i>
+              <span slot="title">vuex从store取数据</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">
