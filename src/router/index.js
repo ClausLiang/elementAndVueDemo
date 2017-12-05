@@ -6,6 +6,7 @@ import SonToFather from '@/components/sonToFather/SonToFather'
 import WebSocketTest from '@/components/websocket/WebSocketTest'
 import AddGoods from '@/components/vuexContainer/AddGoods'
 import ShowGoods from '@/components/vuexContainer/ShowGoods'
+import UploadImg from '@/components/uploadimg/UploadImg'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
         {
           path: '/showGoods',
           component: ShowGoods
+        },
+        {
+          path: '/uploadimg',
+          component: UploadImg
         }
       ]
     }

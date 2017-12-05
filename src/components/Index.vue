@@ -27,6 +27,10 @@
               <i class="el-icon-goods"></i>
               <span slot="title">vuex从store取数据</span>
             </el-menu-item>
+            <el-menu-item index="/uploadimg">
+              <i class="el-icon-picture"></i>
+              <span slot="title">裁剪图片</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">
