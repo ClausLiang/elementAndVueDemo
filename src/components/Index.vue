@@ -31,6 +31,14 @@
               <i class="el-icon-picture"></i>
               <span slot="title">裁剪图片</span>
             </el-menu-item>
+            <el-menu-item index="/uploadimg2">
+              <i class="el-icon-picture"></i>
+              <span slot="title">裁剪图片2</span>
+            </el-menu-item>
+            <el-menu-item index="/getdata">
+              <i class="el-icon-picture"></i>
+              <span slot="title">获取数据</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">
@@ -56,5 +64,6 @@
     text-align center;
   }
   .menu{
+    overflow-y hidden;
   }
 </style>

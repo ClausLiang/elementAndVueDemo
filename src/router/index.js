@@ -7,6 +7,8 @@ import WebSocketTest from '@/components/websocket/WebSocketTest'
 import AddGoods from '@/components/vuexContainer/AddGoods'
 import ShowGoods from '@/components/vuexContainer/ShowGoods'
 import UploadImg from '@/components/uploadimg/UploadImg'
+import UploadImg2 from '@/components/uploadimg/UploadImg2'
+import GetData from '@/components/getdata/GetData'
 
 Vue.use(Router)
 
@@ -40,6 +42,14 @@ export default new Router({
         {
           path: '/uploadimg',
           component: UploadImg
+        },
+        {
+          path: '/uploadimg2',
+          component: UploadImg2
+        },
+        {
+          path: '/getdata',
+          component: GetData
         }
       ]
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="uploadimg">
-    <img :src="headerImage" alt="" @click="showImgHandle" class="avatar">
+    <img :src="headerImage" alt="img" @click="showImgHandle" class="avatar">
     <el-dialog title="选择图片" :visible.sync="showUpload" width="500px">
       <input type="file" ref="imgFile" @change="imgChange">
       <div class="img-container">
