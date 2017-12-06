@@ -40,7 +40,6 @@
       // 初始化cropper
       initCropper () {
         const image = document.querySelector('#imgContent')
-        var self = this
         if (!this.cropper) {
           this.cropper = new Cropper(image, {
             aspectRatio: 1,
@@ -48,10 +47,7 @@
             background: false,
             // zoomable: false,
             // autoCropArea:0.8,
-            preview: '.img-right',
-            ready: function () {
-              self.croppable = true
-            }
+            preview: '.img-right'
           })
         }
       },
