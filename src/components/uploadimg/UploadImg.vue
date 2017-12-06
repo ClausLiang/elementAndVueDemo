@@ -129,7 +129,7 @@
       text-align center
       font-size 20px;
       display: flex
-      padding-top 10px;
+      padding 20px;
       i{
         flex:1
       }
