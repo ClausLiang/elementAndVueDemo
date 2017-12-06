@@ -10,10 +10,11 @@
         <div class="img-right">
         </div>
       </div>
-      <span slot="footer" class="dialog-footer">
-        <el-button @click="showUpload = false">取 消</el-button>
-        <el-button type="primary" @click="cropHandle">确 定</el-button>
-      </span>
+      <div class="btn-group">
+        <i class="el-icon-close" @click="showUpload = false"></i>
+        <i class="el-icon-refresh" @click="rotateHandle"></i>
+        <i class="el-icon-check" @click="cropHandle"></i>
+      </div>
     </el-dialog>
   </div>
 </template>
@@ -91,6 +92,9 @@
       },
       postImg () {
         // 这边写图片的上传
+      },
+      rotateHandle () {
+        this.cropper.rotate(90)
       }
     }
   }
@@ -118,6 +122,16 @@
         margin-left 10px;
         vertical-align top;
         overflow: hidden;
+      }
+    }
+    .btn-group{
+      height: 20px;
+      text-align center
+      font-size 20px;
+      display: flex
+      padding-top 10px;
+      i{
+        flex:1
       }
     }
   }
