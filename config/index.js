@@ -11,7 +11,18 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/mock': {
+         target: 'https://www.easy-mock.com',
+         changeOrigin:true,
+         secure: false
+       },
+      '/automini-merchapi/v1/*': {
+        target: 'https://mp.jyallpay.com/',
+        changeOrigin:true,
+        secure: false
+      },
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
