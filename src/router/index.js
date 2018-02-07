@@ -9,6 +9,7 @@ import ShowGoods from '@/components/vuexContainer/ShowGoods'
 import UploadImg from '@/components/uploadimg/UploadImg'
 import UploadImg2 from '@/components/uploadimg/UploadImg2'
 import GetData from '@/components/getdata/GetData'
+import test from '@/components/test/test'
 
 Vue.use(Router)
 
@@ -50,6 +51,10 @@ export default new Router({
         {
           path: '/getdata',
           component: GetData
+        },
+        {
+          path: '/test',
+          component: test
         }
       ]
     }
