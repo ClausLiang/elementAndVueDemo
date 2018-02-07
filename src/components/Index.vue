@@ -39,10 +39,6 @@
               <i class="el-icon-picture"></i>
               <span slot="title">获取数据及去空格</span>
             </el-menu-item>
-            <el-menu-item index="/test">
-              <i class="el-icon-picture"></i>
-              <span slot="title">测试</span>
-            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="main">
