@@ -20,12 +20,12 @@
       }
     },
     created () {
-      this.$http.get(api.TEST).then(response => {
+      this.axios.get(api.TEST).then(response => {
         if (response.data.status === 'ok') {
           console.log(response.data.data)
         }
       })
-      this.$http.get(api.TEST2, {
+      this.axios.get(api.TEST2, {
         headers: {
           'Content-Type': 'application/json',
           'merchantcode': 'MCT1171',
