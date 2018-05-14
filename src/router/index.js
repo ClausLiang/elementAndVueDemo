@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Login from '@/components/login/login'
 import Index from '@/components/Index'
 import FatherToSon from '@/components/fatherToSon/FatherToSon'
 import SonToFather from '@/components/sonToFather/SonToFather'
@@ -17,6 +18,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/index',
       name: 'index',
       component: Index,
       children: [
