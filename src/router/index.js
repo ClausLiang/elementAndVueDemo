@@ -11,6 +11,7 @@ import UploadImg from '@/components/uploadimg/UploadImg'
 import UploadImg2 from '@/components/uploadimg/UploadImg2'
 import GetData from '@/components/getdata/GetData'
 import test from '@/components/test/test'
+import elementComp from '@/components/elementComp/elementComp'
 
 Vue.use(Router)
 
@@ -26,6 +27,10 @@ export default new Router({
       name: 'index',
       component: Index,
       children: [
+        {
+          path: '/elementComp',
+          component: elementComp
+        },
         {
           path: '/fatherToSon',
           component: FatherToSon
