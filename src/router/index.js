@@ -18,19 +18,16 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/login',
       name: 'login',
       component: Login
     },
     {
-      path: '/index',
+      path: '/',
+      redirect: '/fatherToSon',
       name: 'index',
       component: Index,
       children: [
-        {
-          path: '/elementComp',
-          component: elementComp
-        },
         {
           path: '/fatherToSon',
           component: FatherToSon
@@ -66,6 +63,10 @@ export default new Router({
         {
           path: '/test',
           component: test
+        },
+        {
+          path: '/elementComp',
+          component: elementComp
         }
       ]
     }

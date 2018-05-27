@@ -5,10 +5,10 @@
       <div class="login-content">
         <el-form :model="loginForm" :rules="rules" ref="loginForm" label-width="0" class="demo-ruleForm">
           <el-form-item label="" prop="name">
-            <el-input v-model="loginForm.name"></el-input>
+            <el-input v-model="loginForm.name" placeholder="用户名" :maxlength="10"></el-input>
           </el-form-item>
           <el-form-item label="" prop="password">
-            <el-input type="password" v-model="loginForm.password"></el-input>
+            <el-input type="password" v-model="loginForm.password" placeholder="密码" :maxlength="10"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button type="primary" @click="submitForm" class="login-btn">登录</el-button>
@@ -25,12 +25,15 @@
     data () {
       return {
         loginForm: {
-          name: '',
-          password: ''
+          name: 'admin',
+          password: 'admin'
         },
         rules: {
           name: [
             { required: true, message: '请输入用户名', trigger: 'blur' }
+          ],
+          password: [
+            { required: true, message: '请输入密码', trigger: 'blur' }
           ]
         }
       }
@@ -39,7 +42,16 @@
       submitForm () {
         this.$refs['loginForm'].validate((valid) => {
           if (valid) {
-
+            // 这儿应该去调用登录接口，成功以后将用户信息保存到浏览器缓存中
+            let sysUser = {}
+            if (this.loginForm.name === 'admin') {
+              sysUser.authority = 'admin'
+            } else {
+              sysUser.authority = '1'
+            }
+            sysUser.name = this.loginForm.name
+            window.sessionStorage.sysUser = JSON.stringify(sysUser)
+            this.$router.push({path: '/'})
           } else {
             return false
           }

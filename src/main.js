@@ -19,3 +19,15 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') { // 如果要跳转登录页不处理
+    next()
+  } else { // 否则就要判断登陆状态
+    if (sessionStorage.getItem('sysUser')) { // 已登录不做处理
+      next()
+    } else { // 未登录跳转到登录页
+      alert('登录异常，请重新登录')
+      next({path: '/login'})
+    }
+  }
+})
