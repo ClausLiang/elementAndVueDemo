@@ -4,7 +4,7 @@
       <div class="logo">
 
       </div>
-      <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router>
+      <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse">
         <el-menu-item index="/fatherToSon">
           <i class="el-icon-menu"></i>
           <span slot="title">父组件对子组件传值</span>
@@ -44,7 +44,9 @@
       </el-menu>
     </div>
     <div class="main-content">
-      <div class="header"></div>
+      <div class="header">
+        <span class="switch" @click="menuSwitchHandle"></span>
+      </div>
       <div class="main-wrapper">
         <router-view></router-view>
       </div>
@@ -55,7 +57,8 @@
   export default {
     data () {
       return {
-        currentMenu: this.$route.path
+        currentMenu: this.$route.path,
+        menuCollapse: true
       }
     },
     created () {
@@ -63,6 +66,11 @@
       } else { // 未登录重新登录
         alert('登录异常，请重新登录')
         this.$router.push({path: '/login'})
+      }
+    },
+    methods: {
+      menuSwitchHandle () {
+        this.menuCollapse = !this.menuCollapse
       }
     }
   }
@@ -74,12 +82,22 @@
       flex: 0 0 200px;
       .logo{
         height: 60px;
+        background: lightgreen;
       }
     }
     .main-content{
       flex: 1;
       .header{
         height: 60px;
+        position: relative;
+        .switch{
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 60px;
+          width: 60px;
+          background: lightcyan;
+        }
       }
       .main-wrapper{
         padding: 20px;
