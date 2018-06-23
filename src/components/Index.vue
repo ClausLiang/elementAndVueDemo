@@ -1,6 +1,6 @@
 <template>
   <div class="index-wrapper">
-    <div class="menu-wrapper">
+    <div :class="menuCollapse ? 'menu-wrapper collapse' : 'menu-wrapper'">
       <div class="logo">
 
       </div>
@@ -58,7 +58,7 @@
     data () {
       return {
         currentMenu: this.$route.path,
-        menuCollapse: true
+        menuCollapse: false
       }
     },
     created () {
@@ -76,13 +76,41 @@
   }
 </script>
 <style lang="stylus">
+  .customAni{
+    transition: all 300ms ease-in-out;
+  }
   .index-wrapper{
     display: flex;
+    height: 100%;
     .menu-wrapper{
       flex: 0 0 200px;
+      background: #001529;
+      @extend .customAni;
+      &.collapse{
+        flex: 0 0 64px;
+        .el-menu{
+          span{
+            opacity: 0;
+          }
+        }
+      }
       .logo{
         height: 60px;
         background: lightgreen;
+      }
+      .el-menu{
+        border-right: none;
+        background: #001529;
+        .el-menu-item{
+          color: hsla(0,0%,100%,.65);
+          &:hover{
+            background: #000c17;
+          }
+          &.is-active{
+            background: #33335e;
+            border-right: 2px solid #20a1ff;
+          }
+        }
       }
     }
     .main-content{
