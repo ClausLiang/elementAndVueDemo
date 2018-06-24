@@ -5,6 +5,13 @@
 
       </div>
       <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse">
+        <el-submenu>
+          <template slot="title">
+            <i class="el-icon-menu"></i>
+            <span>vue特性</span>
+          </template>
+          <el-menu-item index="/tt">父子组件之间传值</el-menu-item>
+        </el-submenu>
         <el-menu-item index="/fatherToSon">
           <i class="el-icon-menu"></i>
           <span slot="title">父组件对子组件传值</span>
@@ -115,9 +122,11 @@
     }
     .main-content{
       flex: 1;
+      background: #f6f8f9;
       .header{
         height: 60px;
         position: relative;
+        background: #fff;
         .switch{
           position: absolute;
           left: 0;
