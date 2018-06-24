@@ -10,16 +10,9 @@
             <i class="el-icon-menu"></i>
             <span>vue特性</span>
           </template>
-          <el-menu-item index="/tt">父子组件之间传值</el-menu-item>
+          <el-menu-item index="/fatherToSon">父对子组件传值</el-menu-item>
+          <el-menu-item index="/sonToFather">子对父组件传值</el-menu-item>
         </el-submenu>
-        <el-menu-item index="/fatherToSon">
-          <i class="el-icon-menu"></i>
-          <span slot="title">父组件对子组件传值</span>
-        </el-menu-item>
-        <el-menu-item index="/sonToFather">
-          <i class="el-icon-menu"></i>
-          <span slot="title">子组件对父组件传值</span>
-        </el-menu-item>
         <el-menu-item index="/websocket">
           <i class="el-icon-menu"></i>
           <span slot="title">websocket</span>
@@ -103,7 +96,7 @@
       }
       .logo{
         height: 60px;
-        background: lightgreen;
+        background: #20a1ff;
       }
       .el-menu{
         border-right: none;
@@ -111,11 +104,25 @@
         .el-menu-item{
           color: hsla(0,0%,100%,.65);
           &:hover{
+            color: #fff;
             background: #000c17;
           }
           &.is-active{
             background: #33335e;
-            border-right: 2px solid #20a1ff;
+            border-right: 3px solid #20a1ff;
+          }
+        }
+        /* 子菜单样式 */
+        .el-submenu{
+          .el-submenu__title{
+            color: hsla(0,0%,100%,.65);
+            &:hover{
+              color: #fff;
+              background: #000c17;
+            }
+          }
+          .el-menu{
+            background: rgba(0, 12, 23, 0.7);
           }
         }
       }
