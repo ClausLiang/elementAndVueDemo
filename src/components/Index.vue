@@ -2,7 +2,8 @@
   <div class="index-wrapper">
     <div :class="menuCollapse ? 'menu-wrapper collapse' : 'menu-wrapper'">
       <div class="logo">
-
+        <i class="iconfont icon-houtaitubiao-"></i>
+        <span class="app-name">后台管理系统</span>
       </div>
       <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse">
         <el-submenu index="1">
@@ -48,6 +49,14 @@
         <span class="switch" @click="menuSwitchHandle">
           <i :class="menuCollapse ? 'iconfont icon-zhedie-copy' : 'iconfont icon-zhedie'"></i>
         </span>
+        <el-dropdown class="header-btn" @command="handleCommand">
+          <span>
+            {{userName}}<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="logout">退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
       </div>
       <div class="main-wrapper">
         <router-view></router-view>
@@ -60,11 +69,13 @@
     data () {
       return {
         currentMenu: this.$route.path,
-        menuCollapse: false
+        menuCollapse: false,
+        userName: ''
       }
     },
     created () {
       if (sessionStorage.getItem('sysUser')) { // 每次刷新页面判断判断状态已登录不做处理
+        this.userName = JSON.parse(sessionStorage.getItem('sysUser')).name
       } else { // 未登录重新登录
         alert('登录异常，请重新登录')
         this.$router.push({path: '/login'})
@@ -73,6 +84,12 @@
     methods: {
       menuSwitchHandle () {
         this.menuCollapse = !this.menuCollapse
+      },
+      handleCommand(command) {
+        if(command === 'logout') {
+          sessionStorage.clear()
+          this.$router.push({path: '/login'})
+        }
       }
     }
   }
@@ -97,8 +114,21 @@
         }
       }
       .logo{
-        height: 60px;
         background: #20a1ff;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
+        padding-left: 20px;
+        font-weight: bold;
+        i{
+          font-size: 28px;
+          vertical-align: middle;
+        }
+        .app-name{
+          padding-left: 5px;
+          font-size: 18px;
+          vertical-align: middle;
+        }
       }
       .el-menu{
         border-right: none;
@@ -134,6 +164,7 @@
       background: #f6f8f9;
       .header{
         height: 60px;
+        padding-right: 20px;
         position: relative;
         background: #fff;
         .switch{
@@ -147,6 +178,13 @@
           i{
             line-height: 60px;
           }
+        }
+        .header-btn{
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translate(0, -50%);
+          cursor: pointer;
         }
       }
       .main-wrapper{
