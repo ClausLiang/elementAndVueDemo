@@ -5,7 +5,7 @@
 
       </div>
       <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse">
-        <el-submenu>
+        <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-menu"></i>
             <span>vue特性</span>
@@ -45,7 +45,9 @@
     </div>
     <div class="main-content">
       <div class="header">
-        <span class="switch" @click="menuSwitchHandle"></span>
+        <span class="switch" @click="menuSwitchHandle">
+          <i :class="menuCollapse ? 'iconfont icon-zhedie-copy' : 'iconfont icon-zhedie'"></i>
+        </span>
       </div>
       <div class="main-wrapper">
         <router-view></router-view>
@@ -139,8 +141,12 @@
           left: 0;
           top: 0;
           height: 60px;
-          width: 60px;
+          width: 50px;
           background: lightcyan;
+          text-align: center;
+          i{
+            line-height: 60px;
+          }
         }
       }
       .main-wrapper{

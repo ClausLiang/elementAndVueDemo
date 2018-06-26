@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import store from '@/store/store'
 import 'cropperjs/dist/cropper.css'
+import './iconfont/iconfont.css' // 引入iconfont
 import axios from 'axios'
 Vue.prototype.axios = axios
 Vue.use(ElementUI)
