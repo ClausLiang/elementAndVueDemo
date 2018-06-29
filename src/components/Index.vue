@@ -2,7 +2,7 @@
   <div class="index-wrapper">
     <div :class="menuCollapse ? 'menu-wrapper collapse' : 'menu-wrapper'">
       <div class="logo">
-        <i class="iconfont icon-houtaitubiao-"></i>
+        <img src="../../static/img/logo.png" alt="">
         <span class="app-name">后台管理系统</span>
       </div>
       <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse">
@@ -85,8 +85,8 @@
       menuSwitchHandle () {
         this.menuCollapse = !this.menuCollapse
       },
-      handleCommand(command) {
-        if(command === 'logout') {
+      handleCommand (command) {
+        if (command === 'logout') {
           sessionStorage.clear()
           this.$router.push({path: '/login'})
         }
@@ -118,10 +118,11 @@
         height: 60px;
         line-height: 60px;
         color: #fff;
-        padding-left: 20px;
+        padding-left: 14px;
         font-weight: bold;
-        i{
-          font-size: 28px;
+        img{
+          width: 40px;
+          height: 40px;
           vertical-align: middle;
         }
         .app-name{
