@@ -27,7 +27,6 @@ router.beforeEach((to, from, next) => {
     if (sessionStorage.getItem('sysUser')) { // 已登录不做处理
       next()
     } else { // 未登录跳转到登录页
-      alert('登录异常，请重新登录')
       next({path: '/login'})
     }
   }

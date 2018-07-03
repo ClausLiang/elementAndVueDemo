@@ -77,7 +77,6 @@
       if (sessionStorage.getItem('sysUser')) { // 每次刷新页面判断判断状态已登录不做处理
         this.userName = JSON.parse(sessionStorage.getItem('sysUser')).name
       } else { // 未登录重新登录
-        alert('登录异常，请重新登录')
         this.$router.push({path: '/login'})
       }
     },
