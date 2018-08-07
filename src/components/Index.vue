@@ -118,14 +118,20 @@
     transition: all 300ms ease-in-out;
   }
   .index-wrapper{
-    display: flex;
+    position: relative;
     height: 100%;
+    /*定位布局解决菜单折叠时出现的横向滚动条*/
+    /* 左侧菜单 */
     .menu-wrapper{
-      flex: 0 0 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200px;
+      bottom: 0;
       background: #001529;
       @extend .customAni;
       &.collapseClass{
-        flex: 0 0 64px;
+        width: 64px;
         .el-menu{
           span{
             opacity: 0;
@@ -179,11 +185,17 @@
         }
       }
     }
+    /* 右侧内容 */
     .main-content{
-      flex: 1;
+      position: absolute;
+      top: 0;
+      left: 200px;
+      right: 0;
+      bottom: 0;
       background: #f6f8f9;
+      @extend .customAni;
       &.collapseClass{
-        flex: 1;
+        left: 64px;
       }
       .header{
         height: 60px;
