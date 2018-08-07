@@ -12,6 +12,7 @@ import UploadImg2 from '@/components/uploadimg/UploadImg2'
 import GetData from '@/components/getdata/GetData'
 import test from '@/components/test/test'
 import elementComp from '@/components/elementComp/elementComp'
+import Table from '@/components/elementComp/table'
 
 Vue.use(Router)
 
@@ -67,6 +68,11 @@ export default new Router({
         {
           path: '/elementComp',
           component: elementComp
+        },
+        {
+          path: '/table',
+          name: 'Table',
+          component: Table
         }
       ]
     }

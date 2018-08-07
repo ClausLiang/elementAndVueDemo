@@ -1,11 +1,12 @@
 <template>
   <div class="index-wrapper">
-    <div :class="menuCollapse ? 'menu-wrapper collapse' : 'menu-wrapper'">
+    <div :class="menuCollapse ? 'menu-wrapper collapseClass' : 'menu-wrapper'">
       <div class="logo">
         <img src="../../static/img/logo.png" alt="">
         <span class="app-name">后台管理系统</span>
       </div>
       <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse">
+        <!--菜单一：Vue特性-->
         <el-submenu index="1">
           <template slot="title">
             <i class="el-icon-menu"></i>
@@ -14,37 +15,56 @@
           <el-menu-item index="/fatherToSon">父对子组件传值</el-menu-item>
           <el-menu-item index="/sonToFather">子对父组件传值</el-menu-item>
         </el-submenu>
+        <!--菜单二：websocket-->
         <el-menu-item index="/websocket">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-goods"></i>
           <span slot="title">websocket</span>
         </el-menu-item>
-        <el-menu-item index="/addgoods">
-          <i class="el-icon-edit-outline"></i>
-          <span slot="title">vuex存数据到store</span>
-        </el-menu-item>
-        <el-menu-item index="/showgoods">
-          <i class="el-icon-goods"></i>
-          <span slot="title">vuex从store取数据</span>
-        </el-menu-item>
-        <el-menu-item index="/uploadimg">
-          <i class="el-icon-picture"></i>
-          <span slot="title">裁剪图片</span>
-        </el-menu-item>
-        <el-menu-item index="/uploadimg2">
-          <i class="el-icon-picture"></i>
-          <span slot="title">裁剪图片2</span>
-        </el-menu-item>
+
+        <!--菜单三：vuex-->
+        <el-submenu index="3">
+          <template slot="title">
+            <i class="el-icon-edit-outline"></i>
+            <span>vuex</span>
+          </template>
+          <el-menu-item index="/addgoods">vuex存数据到store</el-menu-item>
+          <el-menu-item index="/showgoods">vuex从store取数据</el-menu-item>
+        </el-submenu>
+
+        <!--菜单四：图片-->
+        <el-submenu index="4">
+          <template slot="title">
+            <i class="el-icon-picture"></i>
+            <span>裁剪图片</span>
+          </template>
+          <el-menu-item index="/uploadimg">裁剪图片</el-menu-item>
+          <el-menu-item index="/uploadimg2">裁剪图片2</el-menu-item>
+        </el-submenu>
+
+        <!--菜单五：-->
         <el-menu-item index="/getdata">
-          <i class="el-icon-picture"></i>
+          <i class="el-icon-printer"></i>
           <span slot="title">获取数据及去空格</span>
         </el-menu-item>
+
+        <!--菜单六：element-->
+        <el-submenu index="6">
+          <template slot="title">
+            <i class="el-icon-news"></i>
+            <span>element</span>
+          </template>
+          <el-menu-item index="/table">表格</el-menu-item>
+          <el-menu-item index="/elementComp">穿梭框</el-menu-item>
+        </el-submenu>
+
+        <!--菜单测试：-->
         <el-menu-item index="/test">
-          <i class="el-icon-picture"></i>
+          <i class="el-icon-view"></i>
           <span slot="title">测试</span>
         </el-menu-item>
       </el-menu>
     </div>
-    <div class="main-content">
+    <div :class="menuCollapse ? 'main-content collapseClass' : 'main-content'">
       <div class="header">
         <span class="switch" @click="menuSwitchHandle">
           <i :class="menuCollapse ? 'iconfont icon-zhedie-copy' : 'iconfont icon-zhedie'"></i>
@@ -104,7 +124,7 @@
       flex: 0 0 200px;
       background: #001529;
       @extend .customAni;
-      &.collapse{
+      &.collapseClass{
         flex: 0 0 64px;
         .el-menu{
           span{
@@ -162,6 +182,9 @@
     .main-content{
       flex: 1;
       background: #f6f8f9;
+      &.collapseClass{
+        flex: 1;
+      }
       .header{
         height: 60px;
         padding-right: 20px;
