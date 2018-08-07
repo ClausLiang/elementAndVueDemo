@@ -59,11 +59,11 @@
         currentPage: 1,
         totalSize: 100,
         tableData: [
-          {num:1, city:'上海', house: 'xx楼盘', name: 'lyg', card: '身份证', cardNum: '141122111111111111'}
+          {num: 1, city: '上海', house: 'xx楼盘', name: 'lyg', card: '身份证', cardNum: '141122111111111111'}
         ]
       }
     },
-    created:function(){
+    created: function () {
       this.search()
     },
     methods: {
@@ -76,7 +76,7 @@
       deleteP (row) {
         console.log(row.cardNum)
       }
-    },
+    }
   }
 </script>
 
