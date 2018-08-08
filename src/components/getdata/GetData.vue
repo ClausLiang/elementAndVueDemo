@@ -2,10 +2,12 @@
     <div class=''>
       <div>
         <h3>去空格</h3>
+        <!--两个原生去空格-->
         <input type="text" onkeyup="this.value=this.value.replace(/\s+/,'')"><br><br>
         <input type="text" @keyup="qukongge" ref="yuansheng"><br><br>
-        <el-input @keyup.native="qukongge2" ref="elllll" v-model="input"></el-input><br><br>
-        <el-input @keyup.native="input2 = input2.replace(/\s+/,'')" ref="elllll" v-model="input2"></el-input>
+        <!--el-input去空格-->
+        <el-input @keyup.native="qukongge2" v-model="input"></el-input><br><br>
+        <el-input @keyup.native="input2 = input2.replace(/\s+/,'')" v-model="input2"></el-input>
       </div>
     </div>
 </template>
