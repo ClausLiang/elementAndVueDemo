@@ -1,9 +1,9 @@
 <template>
   <div class="sonToFather">
     <h2>子组件给父组件传值--通过事件</h2>
-    <p>{{total}}</p>
-    <button-counter @increment="incrementTotal"></button-counter>
-    <button-counter @increment="incrementTotal"></button-counter>
+    <p>统计：{{total}}</p>
+    <button-counter1 @increment="incrementTotal"></button-counter1>
+    <button-counter2 @increment="incrementTotal"></button-counter2>
   </div>
 </template>
 <script>
@@ -16,26 +16,38 @@
       }
     },
     methods: {
-      incrementTotal () {
-        this.total += 1
+      incrementTotal (val) {
+        this.total += val
       }
     }
   }
   // 定义了一个全局组件
-  Vue.component('button-counter', {
-    template: '<button v-on:click="increment">{{counter}}</button>',
+  Vue.component('button-counter1', {
+    template: '<button @click="clickHandle">内部计数器：{{counter}}，每点1次+1</button>',
     data () {
       return {
         counter: 0
       }
     },
     methods: {
-      increment () {
+      clickHandle () {
         this.counter += 1
-        this.$emit('increment')
+        this.$emit('increment', 1)
+      }
+    }
+  })
+  Vue.component('button-counter2', {
+    template: '<button @click="clickHandle">内部计数器：{{counter}}，每点1次+2</button>',
+    data () {
+      return {
+        counter: 0
       }
     },
-    created () {
+    methods: {
+      clickHandle () {
+        this.counter += 2
+        this.$emit('increment', 2)
+      }
     }
   })
 </script>
