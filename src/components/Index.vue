@@ -5,7 +5,7 @@
         <img src="../../static/img/logo.png" alt="">
         <span class="app-name">后台管理系统</span>
       </div>
-      <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse">
+      <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse" unique-opened>
         <!--菜单一：Vue特性-->
         <el-submenu index="1">
           <template slot="title">
