@@ -1,6 +1,8 @@
 <template>
     <div class=''>
       <div>
+        <h3>异步获取数据见代码</h3>
+        <hr>
         <h3>去空格</h3>
         <!--两个原生去空格-->
         <input type="text" onkeyup="this.value=this.value.replace(/\s+/,'')"><br><br>

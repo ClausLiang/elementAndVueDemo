@@ -10,9 +10,9 @@ import ShowGoods from '@/components/vuexContainer/ShowGoods'
 import UploadImg from '@/components/uploadimg/UploadImg'
 import UploadImg2 from '@/components/uploadimg/UploadImg2'
 import GetData from '@/components/getdata/GetData'
-import test from '@/components/test/test'
 import elementComp from '@/components/elementComp/elementComp'
 import Table from '@/components/elementComp/table'
+import UploadQiniu from '@/components/uploadQiniu/uploadQiniu'
 
 Vue.use(Router)
 
@@ -62,10 +62,6 @@ export default new Router({
           component: GetData
         },
         {
-          path: '/test',
-          component: test
-        },
-        {
           path: '/elementComp',
           component: elementComp
         },
@@ -73,6 +69,11 @@ export default new Router({
           path: '/table',
           name: 'Table',
           component: Table
+        },
+        {
+          path: 'upload',
+          name: 'UploadQiniu',
+          component: UploadQiniu
         }
       ]
     }

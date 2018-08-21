@@ -15,11 +15,17 @@
           <el-menu-item index="/fatherToSon">父对子组件传值</el-menu-item>
           <el-menu-item index="/sonToFather">子对父组件传值</el-menu-item>
         </el-submenu>
-        <!--菜单二：websocket-->
-        <el-menu-item index="/websocket">
-          <i class="el-icon-goods"></i>
-          <span slot="title">websocket</span>
-        </el-menu-item>
+
+        <!--菜单二：各组件及功能-->
+        <el-submenu index="2">
+          <template slot="title">
+            <i class="el-icon-printer"></i>
+            <span>通用组件及功能</span>
+          </template>
+          <el-menu-item index="/websocket">websocket</el-menu-item>
+          <el-menu-item index="/getdata">获取数据及去空格</el-menu-item>
+          <el-menu-item index="/upload">上传文件到七牛</el-menu-item>
+        </el-submenu>
 
         <!--菜单三：vuex-->
         <el-submenu index="3">
@@ -41,14 +47,8 @@
           <el-menu-item index="/uploadimg2">裁剪图片2</el-menu-item>
         </el-submenu>
 
-        <!--菜单五：-->
-        <el-menu-item index="/getdata">
-          <i class="el-icon-printer"></i>
-          <span slot="title">获取数据及去空格</span>
-        </el-menu-item>
-
-        <!--菜单六：element-->
-        <el-submenu index="6">
+        <!--菜单五：element-->
+        <el-submenu index="5">
           <template slot="title">
             <i class="el-icon-news"></i>
             <span>element</span>
@@ -57,11 +57,6 @@
           <el-menu-item index="/elementComp">穿梭框</el-menu-item>
         </el-submenu>
 
-        <!--菜单测试：-->
-        <el-menu-item index="/test">
-          <i class="el-icon-view"></i>
-          <span slot="title">测试</span>
-        </el-menu-item>
       </el-menu>
     </div>
     <div :class="menuCollapse ? 'main-content collapseClass' : 'main-content'">
