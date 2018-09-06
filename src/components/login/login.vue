@@ -11,6 +11,11 @@
             <el-input type="password" v-model="loginForm.password" placeholder="密码" :maxlength="10"></el-input>
           </el-form-item>
           <el-form-item>
+            <el-input style="width: 220px;"></el-input>
+            <el-button type="primary" @click="getIdentCodeH" v-show="showIdentifyBtn" style="width: 110px; margin-left: 5px;">获取验证码</el-button>
+            <el-button v-show="!showIdentifyBtn" style="width: 110px; margin-left: 5px;">{{clockNum}}</el-button>
+          </el-form-item>
+          <el-form-item>
             <el-button type="primary" @click="submitForm" class="login-btn">登录</el-button>
           </el-form-item>
         </el-form>
@@ -28,6 +33,8 @@
           name: 'admin',
           password: 'admin'
         },
+        showIdentifyBtn: true, // 显示获取验证码按钮
+        clockNum: 19, // 验证码倒计时
         rules: {
           name: [
             { required: true, message: '请输入用户名', trigger: 'blur' }
@@ -39,6 +46,17 @@
       }
     },
     methods: {
+      getIdentCodeH () {
+        this.showIdentifyBtn = false
+        let timer = setInterval(() => {
+          this.clockNum --
+          if (this.clockNum <= 0) {
+            clearInterval(timer)
+            this.showIdentifyBtn = true
+            this.clockNum = 19
+          }
+        }, 1000)
+      },
       submitForm () {
         this.$refs['loginForm'].validate((valid) => {
           if (valid) {
