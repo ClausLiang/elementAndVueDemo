@@ -62,7 +62,7 @@
     <div :class="menuCollapse ? 'main-content collapseClass' : 'main-content'">
       <div class="header">
         <span class="switch" @click="menuSwitchHandle">
-          <i :class="menuCollapse ? 'iconfont icon-zhedie-copy' : 'iconfont icon-zhedie'"></i>
+          <i :class="menuCollapse ? 'iconfont icon-zhedie-copy small-icon' : 'iconfont icon-zhedie'"></i>
         </span>
         <el-dropdown class="header-btn" @command="handleCommand">
           <span>
@@ -203,10 +203,16 @@
           top: 0;
           height: 60px;
           width: 50px;
-          background: lightcyan;
           text-align: center;
+          &:hover{
+            cursor: pointer;
+            background: rgba(0,0,0,0.025);
+          }
           i{
             line-height: 60px;
+          }
+          .small-icon{
+            font-size: 13px;
           }
         }
         .header-btn{
@@ -219,6 +225,12 @@
       }
       .main-wrapper{
         padding: 20px;
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-y: auto;
       }
     }
   }
