@@ -1,6 +1,5 @@
 <template>
   <div class="sonToFather">
-    <h2>子组件给父组件传值--通过事件</h2>
     <p>统计：{{total}}</p>
     <button-counter1 @increment="incrementTotal"></button-counter1>
     <button-counter2 @increment="incrementTotal"></button-counter2>
@@ -36,6 +35,7 @@
       }
     }
   })
+  // 第二个全局组件
   Vue.component('button-counter2', {
     template: '<button @click="clickHandle">内部计数器：{{counter}}，每点1次+2</button>',
     data () {

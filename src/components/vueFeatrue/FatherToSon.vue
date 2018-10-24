@@ -1,8 +1,7 @@
 <template>
   <div class="fatherson">
-    <h2>父组件给子组件传值--通过props</h2>
     <div>
-      <input type="text" v-model="messageFromFather">
+      父组件：<input type="text" v-model="messageFromFather">
       <my-child :message="messageFromFather"></my-child>
     </div>
   </div>
@@ -11,7 +10,7 @@
 // 定义了一个局部组件
 var child = {
   props: ['message'],
-  template: '<div>{{message}}</div>'
+  template: '<div>这里是子组件：{{message}}</div>'
 }
 export default {
   name: 'fatherToSon',

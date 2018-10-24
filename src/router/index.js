@@ -13,6 +13,7 @@ import GetData from '@/components/getdata/GetData'
 import elementComp from '@/components/elementComp/elementComp'
 import Table from '@/components/elementComp/table'
 import UploadQiniu from '@/components/uploadQiniu/uploadQiniu'
+import BrotherToBrother from '@/components/vueFeatrue/brotherToBrother/BrotherToBrother'
 
 Vue.use(Router)
 
@@ -25,10 +26,11 @@ export default new Router({
     },
     {
       path: '/',
-      redirect: '/fatherToSon',
+      redirect: '/table',
       name: 'index',
       component: Index,
       children: [
+        // 组件间传值
         {
           path: '/fatherToSon',
           component: FatherToSon
@@ -36,6 +38,10 @@ export default new Router({
         {
           path: '/sonToFather',
           component: SonToFather
+        },
+        {
+          path: '/brother',
+          component: BrotherToBrother
         },
         {
           path: '/websocket',

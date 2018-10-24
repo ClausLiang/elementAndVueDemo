@@ -6,18 +6,37 @@
         <span class="app-name">后台管理系统</span>
       </div>
       <el-menu :default-active="currentMenu" class="el-menu-vertical-demo" router :collapse="menuCollapse" unique-opened>
-        <!--菜单一：Vue特性-->
+        <!--菜单：element-->
         <el-submenu index="1">
+          <template slot="title">
+            <i class="el-icon-news"></i>
+            <span>element</span>
+          </template>
+          <el-menu-item index="/table">表格</el-menu-item>
+          <el-menu-item index="/elementComp">穿梭框</el-menu-item>
+        </el-submenu>
+        <!--菜单：Vue特性-->
+        <el-submenu index="2">
           <template slot="title">
             <i class="el-icon-menu"></i>
             <span>vue特性</span>
           </template>
-          <el-menu-item index="/fatherToSon">父对子组件传值</el-menu-item>
-          <el-menu-item index="/sonToFather">子对父组件传值</el-menu-item>
+          <el-submenu index="2-1">
+            <span slot="title">组件之间传值</span>
+            <el-menu-item index="/fatherToSon">父对子组件传值</el-menu-item>
+            <el-menu-item index="/sonToFather">子对父组件传值</el-menu-item>
+            <el-menu-item index="/brother">兄弟组件传值</el-menu-item>
+          </el-submenu>
+
+          <el-submenu index="2-2">
+            <span slot="title">vuex</span>
+            <el-menu-item index="/addgoods">vuex存数据到store</el-menu-item>
+            <el-menu-item index="/showgoods">vuex从store取数据</el-menu-item>
+          </el-submenu>
         </el-submenu>
 
-        <!--菜单二：各组件及功能-->
-        <el-submenu index="2">
+        <!--菜单：各组件及功能-->
+        <el-submenu index="3">
           <template slot="title">
             <i class="el-icon-printer"></i>
             <span>通用组件及功能</span>
@@ -27,17 +46,7 @@
           <el-menu-item index="/upload">上传文件到七牛</el-menu-item>
         </el-submenu>
 
-        <!--菜单三：vuex-->
-        <el-submenu index="3">
-          <template slot="title">
-            <i class="el-icon-edit-outline"></i>
-            <span>vuex</span>
-          </template>
-          <el-menu-item index="/addgoods">vuex存数据到store</el-menu-item>
-          <el-menu-item index="/showgoods">vuex从store取数据</el-menu-item>
-        </el-submenu>
-
-        <!--菜单四：图片-->
+        <!--菜单：图片-->
         <el-submenu index="4">
           <template slot="title">
             <i class="el-icon-picture"></i>
@@ -45,16 +54,6 @@
           </template>
           <el-menu-item index="/uploadimg">裁剪图片</el-menu-item>
           <el-menu-item index="/uploadimg2">裁剪图片2</el-menu-item>
-        </el-submenu>
-
-        <!--菜单五：element-->
-        <el-submenu index="5">
-          <template slot="title">
-            <i class="el-icon-news"></i>
-            <span>element</span>
-          </template>
-          <el-menu-item index="/table">表格</el-menu-item>
-          <el-menu-item index="/elementComp">穿梭框</el-menu-item>
         </el-submenu>
 
       </el-menu>
