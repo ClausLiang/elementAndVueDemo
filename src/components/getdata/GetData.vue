@@ -24,25 +24,16 @@
       }
     },
     created () {
-      this.axios.get(api.TEST).then(response => {
-        if (response.data.status === 'ok') {
-          console.log(response.data.data)
-        }
-      })
-      this.axios.get(api.TEST2, {
-        headers: {
-          'Content-Type': 'application/json',
-          'merchantcode': 'MCT1171',
-          'source': 'PC',
-          'version': '1.0.0'
-        }
-      }).then(response => {
-        console.log(response.data.data)
-      }).catch(err => {
-        console.log(err)
-      })
+      this.getData()
     },
     methods: {
+      getData () {
+        this.axios.get(api.TEST).then(response => {
+          if (response.data.status === 'ok') {
+            console.log(response.data.data)
+          }
+        })
+      },
       qukongge () {
         this.$refs.yuansheng.value = this.$refs.yuansheng.value.replace(/\s+/, '')
       },
