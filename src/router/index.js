@@ -14,6 +14,7 @@ import elementComp from '@/components/elementComp/elementComp'
 import Table from '@/components/elementComp/table'
 import UploadQiniu from '@/components/uploadQiniu/uploadQiniu'
 import BrotherToBrother from '@/components/vueFeatrue/brotherToBrother/BrotherToBrother'
+import Echart from '@/components/echart/echart'
 
 Vue.use(Router)
 
@@ -77,9 +78,14 @@ export default new Router({
           component: Table
         },
         {
-          path: 'upload',
+          path: '/upload',
           name: 'UploadQiniu',
           component: UploadQiniu
+        },
+        {
+          path: '/echart',
+          name: 'Echart',
+          component: Echart
         }
       ]
     }

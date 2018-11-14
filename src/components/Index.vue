@@ -41,6 +41,7 @@
             <i class="el-icon-printer"></i>
             <span>通用组件及功能</span>
           </template>
+          <el-menu-item index="/echart">echart</el-menu-item>
           <el-menu-item index="/websocket">websocket</el-menu-item>
           <el-menu-item index="/getdata">获取数据及去空格</el-menu-item>
           <el-menu-item index="/upload">上传文件到七牛</el-menu-item>
