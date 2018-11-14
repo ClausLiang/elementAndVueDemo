@@ -17,11 +17,6 @@ module.exports = {
          changeOrigin:true,
          secure: false
        },
-      '/automini-merchapi/v1/*': {
-        target: 'https://mp.jyallpay.com/',
-        changeOrigin:true,
-        secure: false
-      },
     },
 
     // Various Dev Server settings
@@ -67,7 +62,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist/bgm'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/bgm',
+    assetsPublicPath: '/bgm/',
 
     /**
      * SourceMap

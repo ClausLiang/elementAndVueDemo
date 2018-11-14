@@ -1,20 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/login/login'
-import Index from '@/components/Index'
-import FatherToSon from '@/components/vueFeatrue/FatherToSon'
-import SonToFather from '@/components/vueFeatrue/SonToFather'
-import WebSocketTest from '@/components/websocket/WebSocketTest'
-import AddGoods from '@/components/vuexContainer/AddGoods'
-import ShowGoods from '@/components/vuexContainer/ShowGoods'
-import UploadImg from '@/components/uploadimg/UploadImg'
-import UploadImg2 from '@/components/uploadimg/UploadImg2'
-import GetData from '@/components/getdata/GetData'
-import elementComp from '@/components/elementComp/elementComp'
-import Table from '@/components/elementComp/table'
-import UploadQiniu from '@/components/uploadQiniu/uploadQiniu'
-import BrotherToBrother from '@/components/vueFeatrue/brotherToBrother/BrotherToBrother'
-import Echart from '@/components/echart/echart'
+
+const Login = () => import('@/components/login/login')
+const Index = () => import('@/components/Index')
+const FatherToSon = () => import('@/components/vueFeatrue/FatherToSon')
+const SonToFather = () => import('@/components/vueFeatrue/SonToFather')
+const BrotherToBrother = () => import('@/components/vueFeatrue/brotherToBrother/BrotherToBrother')
+const WebSocketTest = () => import('@/components/websocket/WebSocketTest')
+const AddGoods = () => import('@/components/vuexContainer/AddGoods')
+const ShowGoods = () => import('@/components/vuexContainer/ShowGoods')
+const UploadImg = () => import('@/components/uploadimg/UploadImg')
+const UploadImg2 = () => import('@/components/uploadimg/UploadImg2')
+const GetData = () => import('@/components/getdata/Getdata')
+const elementComp = () => import('@/components/elementComp/elementComp')
+const Table = () => import('@/components/elementComp/table')
+const UploadQiniu = () => import('@/components/uploadQiniu/uploadQiniu')
+const Echart = () => import('@/components/echart/echart')
 
 Vue.use(Router)
 
