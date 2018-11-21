@@ -32,61 +32,83 @@ export default new Router({
       name: 'index',
       component: Index,
       children: [
-        // 组件间传值
         {
           path: '/fatherToSon',
-          component: FatherToSon
+          name: 'FatherToSon',
+          component: FatherToSon,
+          meta: {title: '父对子组件传值'}
         },
         {
           path: '/sonToFather',
-          component: SonToFather
+          name: 'SonToFather',
+          component: SonToFather,
+          meta: {title: '子对父组件传值'}
         },
         {
           path: '/brother',
-          component: BrotherToBrother
+          name: 'BrotherToBrother',
+          component: BrotherToBrother,
+          meta: {title: '兄弟组件传值'}
         },
         {
           path: '/websocket',
-          component: WebSocketTest
+          name: 'WebSocketTest',
+          component: WebSocketTest,
+          meta: {title: 'websocket'}
         },
         {
           path: '/addgoods',
-          component: AddGoods
+          name: 'AddGoods',
+          component: AddGoods,
+          meta: {title: 'vuex存数据到store'}
         },
         {
           path: '/showGoods',
-          component: ShowGoods
+          name: 'ShowGoods',
+          component: ShowGoods,
+          meta: {title: 'vuex从store取数据'}
         },
         {
           path: '/uploadimg',
-          component: UploadImg
+          name: 'UploadImg',
+          component: UploadImg,
+          meta: {title: '裁剪图片'}
         },
         {
           path: '/uploadimg2',
-          component: UploadImg2
+          name: 'UploadImg2',
+          component: UploadImg2,
+          meta: {title: '裁剪图片2'}
         },
         {
           path: '/getdata',
-          component: GetData
+          name: 'GetData',
+          component: GetData,
+          meta: {title: '获取数据及去空格'}
         },
         {
           path: '/elementComp',
-          component: elementComp
+          name: 'elementComp',
+          component: elementComp,
+          meta: {title: '穿梭框'}
         },
         {
           path: '/table',
           name: 'Table',
-          component: Table
+          component: Table,
+          meta: {title: '表格'}
         },
         {
           path: '/upload',
           name: 'UploadQiniu',
-          component: UploadQiniu
+          component: UploadQiniu,
+          meta: {title: '上传文件到七牛'}
         },
         {
           path: '/echart',
           name: 'Echart',
-          component: Echart
+          component: Echart,
+          meta: {title: 'echart'}
         }
       ]
     }

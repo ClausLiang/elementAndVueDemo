@@ -73,6 +73,9 @@
           </el-dropdown-menu>
         </el-dropdown>
       </div>
+      <div class="tags-content">
+        <Tags></Tags>
+      </div>
       <div class="main-wrapper">
         <router-view></router-view>
       </div>
@@ -80,7 +83,9 @@
   </div>
 </template>
 <script>
+  import Tags from './common/Tags'
   export default {
+    components: {Tags},
     data () {
       return {
         currentMenu: this.$route.path,
@@ -223,10 +228,14 @@
           cursor: pointer;
         }
       }
+      .tags-content{
+        height: 30px;
+        background: #e5e5e5;
+      }
       .main-wrapper{
         padding: 20px;
         position: absolute;
-        top: 60px;
+        top: 90px;
         bottom: 0;
         left: 0;
         right: 0;
