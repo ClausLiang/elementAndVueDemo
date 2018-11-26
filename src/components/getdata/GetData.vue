@@ -2,6 +2,12 @@
     <div class=''>
       <div>
         <h3>异步获取数据见代码</h3>
+        <div>
+          <el-button type="primary" @click="getData">查询</el-button>
+        </div>
+        <div>
+          结果是：{{result}}
+        </div>
         <hr>
         <h3>去空格</h3>
         <!--两个原生去空格-->
@@ -20,7 +26,8 @@
     data () {
       return {
         input: '',
-        input2: ''
+        input2: '',
+        result: ''
       }
     },
     created () {
